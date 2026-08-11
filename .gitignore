@@ -47,3 +47,6 @@ next-env.d.ts
 *.sql
 *.sqlite
 *.sqlite3
+
+# study notes
+/notes
