@@ -7,7 +7,7 @@ import { getRepository } from '@/utils/data-source';
 import { createSession, deleteSession } from '@/utils/session';
 
 export async function signup(formData: FormData) {
-  const userName = formData.get('userName') as string;
+  const userName = formData.get('username') as string;
   const email = formData.get('email') as string;
   const password = formData.get('password') as string;
 
@@ -33,7 +33,6 @@ export async function signup(formData: FormData) {
       email,
       password: hashedPassword,
     });
-
     await userRepository.save(newUser);
   } catch (e) {
     console.error(e);
