@@ -12,7 +12,7 @@ export default function LoginPage() {
     if (result && result.error) {
       setError(result.error);
     }
-  }
+  };
   return (
     <div className='container' style={{ maxWidth: '400px', marginTop: '50px' }}>
       <div className='card'>
