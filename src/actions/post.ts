@@ -43,6 +43,8 @@ export async function createPost(formData: FormData) {
 }
 
 export async function getPosts() {
+  'use cache';
+  cacheTag('posts');
   const postRepository = await getRepository(Post);
 
   // 投稿一覧を取得（作成日時の降順）
@@ -70,7 +72,7 @@ export async function getPost(id: number) {
     where: { id },
     relations: {
       user: true,
-    },
+    }
   });
 
   if (!post) {return null;}
